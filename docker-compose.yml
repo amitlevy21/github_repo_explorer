@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  repository:
+    build:
+      context: "./repository"
+    ports:
+      - "5000:5000"
+
+  db:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - db:/data/db
+
+volumes:
+  db:
