@@ -3,9 +3,15 @@ version: "3"
 services:
   repository:
     build:
-      context: "./repository"
+      context: ./repository
     ports:
       - "5000:5000"
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "8080:8080"
 
   db:
     image: mongo:latest
